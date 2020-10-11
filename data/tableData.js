@@ -7,9 +7,9 @@
 
 var tableArray = [
   {
-    customerName: "Ahmed",
-    customerEmail: "ahmed@example.com",
-    customerID: "afhaque89",
+    customerName: "Alex",
+    customerEmail: "alex@example.com",
+    customerID: "alex89",
     phoneNumber: "000-000-0000"
   }
 ];
