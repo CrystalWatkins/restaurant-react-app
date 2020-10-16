@@ -1,30 +1,17 @@
-// ===============================================================================
-// DEPENDENCIES
-// We need to include the path package to get the correct file path for our html
-// ===============================================================================
-var path = require("path");
+const path = require("path");
+const router = require("express").Router();
+const apiRoutes = require("./api")
 
 
-// ===============================================================================
-// ROUTING
-// ===============================================================================
-
-module.exports = function(app) {
+router.use("/api", apiRoutes);
   // HTML GET Requests
   // Below code handles when users "visit" a page.
   // In each of the below cases the user is shown an HTML page of content
   // ---------------------------------------------------------------------------
 
-  app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "../client/public/tables.html"));
-  });
+router.use(function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"))
+});
 
-  app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "../client/public/reserve.html"));
-  });
+module.exports = router;
 
-  // If no matching route is found default to home
-  app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../client/public/index.html"));
-  });
-};
