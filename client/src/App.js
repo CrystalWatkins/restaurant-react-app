@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
 import Home from "./containers/Home/Home";
 import Tables from "./containers/Tables/Table";
-import Waitlist from "./containers/Waitlist/Waitlist"
+import Waitlist from "./containers/Waitlist/Waitlist";
 
 function App() {
   return (
