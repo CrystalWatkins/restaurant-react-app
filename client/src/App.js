@@ -1,22 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
-
+import React, { Component } from 'react';
+import { Route, Redirect, Switch} from "react-router-dom"
 import Home from "./containers/Home/Home";
 import Tables from "./containers/Tables/Table";
 import Waitlist from "./containers/Waitlist/Waitlist";
 
-function App() {
+class App extends Component {
+  componentDidMount() {}
+  render() {
   return (
-  <Router>
+  <>
+ <div className = "container">
     <Switch>
-      <div className = "App">
-        <Route exact path = "/" component = {Home} />
-        <Route exact path = "/tables" component = {Tables} />
-        <Route exact path = "/waitlist" component = {Waitlist} />
-      </div>
+        <Route path = "/" component = {Home} />
+        <Route path = "/tables" component = {Tables} />
+        <Route path = "/waitlist" component = {Waitlist} />
+        <Redirect from "/" to "/home " />
     </Switch>
-  </Router>
+    </div>
+  </>
   );
+}
 }
 
 export default App;
