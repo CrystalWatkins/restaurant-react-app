@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import Jumbotron from "./common/jumbotron";
+import { renderButtons } from "./../utils/renderBtns";
 import "./Home.css";
 
-const Home = () => {
+const Home = (props) => {
+    const text =
+    "We only have 6 tables! Book your seat before they are all gone!";
     return (
-        <div>
-            <H1> *Emoji here* Hot Restaurant</H1>
-            <H3>Book your seat before they are all gone!</H3>
-            <button>View Tables</button>
-            <button>Make Reservation</button>
-        </div>
+        <Jumbotron
+        text= {text}
+        buttons = {renderButtons("home")}
+        renderClearBtn={false}
+        />
     );
 };
 
