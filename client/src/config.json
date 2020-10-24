@@ -1,0 +1,4 @@
+{
+    "apiUrl": "http://localhost:880/api",
+    "deployedApiUrl": "https://crystalsrestaurant.herokuapp.com/api"
+}
