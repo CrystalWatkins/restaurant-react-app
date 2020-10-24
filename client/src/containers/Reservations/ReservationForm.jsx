@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from "./common/form";
 import Joi from "joi-browser";
-import { makeReservation } from "../services/reservationService";
+import { makeReservation } from "../../services/reservationService";
 class ReservationForm extends Form {
     state = {
         data: {name: "", phoneNumber: "", email: "" },

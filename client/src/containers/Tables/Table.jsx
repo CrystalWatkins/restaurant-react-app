@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Jumbotron from "./common/jumbotron";
-import { renderButtons } from "./../utils/renderBtns";
+import Jumbotron from "../../common/jumbotron";
+import { renderButtons } from "../../utils/renderButtons";
 import {
     getReservations,
     emptyReservations, 
-} from "./../services/reservationService";
-import { getWaitlist, emptyWaitlist } from "./../services/waitlistService";
-import List from "./common/lists";
+} from "../../services/reservationService";
+import { getWaitlist, emptyWaitlist } from "../../services/waitListService";
+import List from "../../common/lists";
 
 
 class Table extends Component {
