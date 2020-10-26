@@ -14,7 +14,7 @@ class App extends Component {
         <Route path = "/" component = {Home} />
         <Route path = "/tables" component = {Tables} />
         <Route path = "/waitlist" component = {Waitlist} />
-        <Redirect from "/" to "/home " />
+        <Redirect from="/" to="/home " />
     </Switch>
     </div>
   </>
