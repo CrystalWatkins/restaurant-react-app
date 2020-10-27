@@ -15,7 +15,7 @@ const Jumbotron = ({ text, buttons, renderClearBtn, onDelete}) => {
                 {renderClearBtn &&(
                     <>
                     <br />
-                    <button className="btn btn-danger mt-3"onClick{() => onDelete()}>
+                    <button className="btn btn-danger mt-3"onClick={() => onDelete()}>
                     clear
                     </button>
                     </>
