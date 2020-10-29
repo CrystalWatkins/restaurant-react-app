@@ -1,9 +1,9 @@
 import React from "react";
 
-const List = ({ header, name, data, isReservation, isWaitlist }) => {
+const List = ({ header, name, data, isReservation, isWaitList }) => {
     if(data.length == 0 && isReservation)
     return <div>There are currently no reservations</div>;
-    if(data.length == 0 && isWaitlist) return null;
+    if(data.length == 0 && isWaitList) return null;
     return(
         <section className="card">
             <div className= "card-header">
@@ -14,7 +14,7 @@ const List = ({ header, name, data, isReservation, isWaitlist }) => {
                     <div key={item._id} className="box">
                     <h3>{item.name}</h3>
                     <p>{item.email}</p>
-                    <p>{item.phoneNumber</p>
+                    <p>{item.phoneNumber}</p>
                     </div>
                 })}
             </div>

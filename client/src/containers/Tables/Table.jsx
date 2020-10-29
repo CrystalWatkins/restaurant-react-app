@@ -5,42 +5,42 @@ import {
     getReservations,
     emptyReservations, 
 } from "../../services/reservationService";
-import { getWaitlist, emptyWaitlist } from "../../services/waitListService";
+import { getWaitList, emptyWaitList } from "../../services/waitListService";
 import List from "../../common/lists";
 
 
 class Table extends Component {
     state = {
         reservations: [],
-        waitlist: []
+        waitList: []
     };
 async componentDidMount() {
 // reservations
 const {data: reservations} = await getReservations();
-//waitlist
-const {data: waitlist } = await getWaitlist();
+//waitList
+const {data: waitList } = await getWaitList();
 this.setState({ reservations, waitList });
 }
 
-handleDeleteWaitlist = async () => {
+handleDeleteWaitList = async () => {
     //reservations
     const originalReservations = this.state.reservations;
     const reservations = originalReservations;
     reservations.splice(0, reservations.length);
-    //waitlist
-    const originalWaitlist = this.state.waitlist;
-    const waitlist = originalwaitlist;
+    //WaitList
+    const originalWaitList = this.state.waitList;
+    const waitlist = originalWaitList;
     waitlist.splice(0, waitlist.length);
 
     this.setState({ reservations, waitlist });
     try {
         await emptyReservations();
-        await emptyWaitlist();
+        await emptyWaitList();
     } catch (ex) {
         if (ex.response && ex.response.status === 404) {
             this.setState({
                 reservations: originalReservations,
-                waitlist: originalWaitlist,
+                waitlist: originalWaitList,
             });
         }
     }
@@ -55,7 +55,7 @@ handleDeleteWaitlist = async () => {
             text = {text}
             buttons = {renderButtons("tables")}
             renderClearBtn = {true}
-            onDelete = {this.handleDeleteWaitlist}
+            onDelete = {this.handleDeleteWaitl=List}
             /> 
             <List
             header="Table Reservations"
@@ -65,10 +65,10 @@ handleDeleteWaitlist = async () => {
             />
             < br />
             <List 
-            header = "Reservation Waitlist"
+            header = "Reservation WaitList"
             name = "waitlist"
             data = {waitlist}
-            isWaitlist= {true}
+            isWaitList= {true}
             />
             </>
         );

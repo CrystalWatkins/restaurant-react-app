@@ -1,7 +1,7 @@
 import http from "./httpService";
 import { apiUrl, deployedApiUrl } from "../config.json";
 
-export function getWaitlist() {
+export function getWaitList() {
   return http.get(deployedApiUrl + "/waitLists");
 }
 
