@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Jumbotron from "../../../common/jumbotron";
+import Jumbotron from "./common/jumbotron";
 import { renderButtons } from "../utils/renderButtons";
 import ReservationForm from "./ReservationForm";
 
