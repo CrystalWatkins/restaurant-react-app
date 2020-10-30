@@ -1,6 +1,6 @@
 import React from 'react';
 import Jumbotron from "./common/jumbotron";
-import { renderButtons } from "../../utils/renderButtons";
+import { renderButtons } from "../utils/renderButtons";
 import "./Home.css";
 
 const Home = (props) => {

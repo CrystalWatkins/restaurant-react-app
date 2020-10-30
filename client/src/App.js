@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Switch} from "react-router-dom"
-import Home from "./containers/Home/Home";
-import Tables from "./containers/Tables/Table";
-import Waitlist from "./containers/Waitlist/Waitlist";
+import Home from "./components/Home";
+import Tables from "./components/Table";
+import Reservations from "./components/Reservations"
 
 class App extends Component {
   componentDidMount() {}
+
   render() {
   return (
   <>
  <div className = "container">
     <Switch>
-        <Route path = "/" component = {Home} />
+        <Route path = "/home" component = {Home} />
         <Route path = "/tables" component = {Tables} />
-        <Route path = "/waitlist" component = {Waitlist} />
+        <Route path = "/reservation" component = {Reservations} />
         <Redirect from="/" to="/home " />
     </Switch>
     </div>

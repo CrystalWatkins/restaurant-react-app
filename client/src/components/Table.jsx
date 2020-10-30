@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Jumbotron from "../../common/jumbotron";
-import { renderButtons } from "../../utils/renderButtons";
+import Jumbotron from "./common/jumbotron";
+import { renderButtons } from "../utils/renderButtons";
 import {
     getReservations,
     emptyReservations, 
-} from "../../services/reservationService";
-import { getWaitList, emptyWaitList } from "../../services/waitListService";
-import List from "../../common/lists";
+} from "../services/reservationService";
+import { getWaitList, emptyWaitList } from "../services/waitListService";
+import List from "./common/lists";
 
 
 class Table extends Component {
@@ -29,10 +29,10 @@ handleDeleteWaitList = async () => {
     reservations.splice(0, reservations.length);
     //WaitList
     const originalWaitList = this.state.waitList;
-    const waitlist = originalWaitList;
-    waitlist.splice(0, waitlist.length);
+    const waitList = originalWaitList;
+    waitList.splice(0, waitList.length);
 
-    this.setState({ reservations, waitlist });
+    this.setState({ reservations, waitList });
     try {
         await emptyReservations();
         await emptyWaitList();
@@ -40,7 +40,7 @@ handleDeleteWaitList = async () => {
         if (ex.response && ex.response.status === 404) {
             this.setState({
                 reservations: originalReservations,
-                waitlist: originalWaitList,
+                waitList: originalWaitList,
             });
         }
     }
@@ -48,14 +48,14 @@ handleDeleteWaitList = async () => {
 
     render() {
         const text = "Current Reservations and Waiting List";
-        const { reservations, waitlist } = this.state;
+        const { reservations, waitList } = this.state;
         return (
             <>
             <Jumbotron
             text = {text}
             buttons = {renderButtons("tables")}
             renderClearBtn = {true}
-            onDelete = {this.handleDeleteWaitl=List}
+            onDelete = {this.handleDeleteWaitList=List}
             /> 
             <List
             header="Table Reservations"
@@ -66,8 +66,8 @@ handleDeleteWaitList = async () => {
             < br />
             <List 
             header = "Reservation WaitList"
-            name = "waitlist"
-            data = {waitlist}
+            name = "waitList"
+            data = {waitList}
             isWaitList= {true}
             />
             </>
