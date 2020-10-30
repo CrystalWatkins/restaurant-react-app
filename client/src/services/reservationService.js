@@ -1,8 +1,8 @@
 import http from "./httpService";
-import { apiUrl, depolyedApiUrl} from "../config.json";
+import { apiUrl, deployedApiUrl} from "../config.json";
 
 export function getReservations() {
-    return http.get(deployedApiUrl + "./tables");
+    return http.get(apiUrl + "./tables");
 }
 
 export function makeReservation(name, email, phoneNumber) {
@@ -11,9 +11,9 @@ export function makeReservation(name, email, phoneNumber) {
         email, 
         phoneNumber,
     };
-    return http.post(deployedApiUrl + "/tables", obj);
+    return http.post(apiUrl + "/tables", obj);
 }
 
 export function emptyReservations() {
-    return http.delete(deployedApiUrl + "/tables");
+    return http.delete(apiUrl + "/tables");
 }
