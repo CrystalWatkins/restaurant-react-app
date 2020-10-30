@@ -2,7 +2,7 @@ import http from "./httpService";
 import { apiUrl, deployedApiUrl} from "../config.json";
 
 export function getReservations() {
-    return http.get(apiUrl + "./tables");
+    return http.get(apiUrl + "/tables");
 }
 
 export function makeReservation(name, email, phoneNumber) {
