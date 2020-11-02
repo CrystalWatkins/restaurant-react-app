@@ -1,6 +1,6 @@
   
 const tables = require("../routes/tables");
-const waitLists = require("../routes/waitlist");
+const waitLists = require("../routes/waitList");
 
 module.exports = function (app) {
   app.use("/api/tables", tables);

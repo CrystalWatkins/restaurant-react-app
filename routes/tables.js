@@ -2,7 +2,7 @@ const Table = require('../models/table');
 const express = require('express');
 const router = express.Router();
 const ash = require('express-async-handler');
-const WaitList = require('../models/waitinglist');
+const WaitList = require('../models/waitList');
 
 router.post('/', ash(async (req, res) => {
     const { name, email, phoneNumber } = req.body;

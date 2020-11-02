@@ -1,8 +1,7 @@
- // Imports express into our app and sets it up for use
- const express = require ('express');
- const path = require('path');
- const app = express();
- const cors = require("cors");
+const express = require("express");
+const app = express();
+const path = require("path");
+const cors = require("cors");
 const config = require("config");
 require("dotenv").config();
 

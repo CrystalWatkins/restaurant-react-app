@@ -1,9 +1,9 @@
 import React from "react";
 
-const List = ({ header, name, data, isReservation, isWaitlist }) => {
+const List = ({ header, name, data, isReservation, isWaitList }) => {
   if (data.length == 0 && isReservation)
     return <div>There are currently no reservations</div>;
-  if (data.length == 0 && isWaitlist) return null;
+  if (data.length == 0 && isWaitList) return null;
   return (
     <section className="card">
       <div className="card-header">
