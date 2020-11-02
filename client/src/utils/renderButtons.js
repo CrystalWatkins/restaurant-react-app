@@ -18,7 +18,7 @@ export function renderButtons(page) {
         {
           content: () => (
             <Button
-              route="/reservations"
+              route="/reservation"
               btnClass="btn-danger"
               spanClass="fa-credit-card"
               btnText="Make Reservation"
@@ -27,7 +27,7 @@ export function renderButtons(page) {
         },
       ];
       break;
-    case "reservations":
+    case "reservation":
       var buttons = [
         {
           content: () => (

@@ -8,6 +8,7 @@ class Form extends Component {
     data: {},
     errors: {},
   };
+
   validateProperty = ({ name, value }) => {
     const obj = { [name]: value };
     const schema = { [name]: this.schema[name] };
@@ -54,7 +55,7 @@ class Form extends Component {
       <div className="form-group">
         <label htmlFor={name}>{label}</label>
         <NumberFormat
-          format="(###) ###-#####"
+          format="(###) ###-####"
           value={data[name]}
           className="form-control"
           name={name}
