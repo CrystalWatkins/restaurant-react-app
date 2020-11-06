@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Jumbotron from "./common/jumbotron";
-import { renderButtons } from "./../utils/renderBtns";
+import { renderButtons } from "./../utils/renderButtons";
 import {
   getReservations,
   emptyReservations,
 } from "./../services/reservationService";
-import { getWaitlist, emptyWaitList } from "./../services/waitListService";
+import { getWaitList, emptyWaitList } from "./../services/waitListService";
 import List from "./common/lists";
 
 class Tables extends Component {
@@ -17,7 +17,7 @@ class Tables extends Component {
     //reservations
     const { data: reservations } = await getReservations();
     //waitList
-    const { data: waitList } = await getWaitlist();
+    const { data: waitList } = await getWaitList();
     this.setState({ reservations, waitList });
   }
 
@@ -27,8 +27,8 @@ class Tables extends Component {
     const reservations = originalReservations;
     reservations.splice(0, reservations.length);
     //waitlist
-    const originalWaitlist = this.state.waitList;
-    const waitList = originalWaitlist;
+    const originalWaitList = this.state.waitList;
+    const waitList = originalWaitList;
     waitList.splice(0, waitList.length);
 
     this.setState({ reservations, waitList });
@@ -39,7 +39,7 @@ class Tables extends Component {
       if (ex.response && ex.response.status === 404) {
         this.setState({
           reservations: originalReservations,
-          waitList: originalWaitlist,
+          waitList: originalWaitList,
         });
       }
     }
@@ -64,10 +64,10 @@ class Tables extends Component {
         />
         <br />
         <List
-          header="Reservation Waitlist"
+          header="Reservation WaitList"
           name="wait list"
           data={waitList}
-          isWaitlist={true}
+          isWaitList={true}
         />
       </>
     );
