@@ -1,4 +1,3 @@
-  
 const tables = require("../routes/tables");
 const waitLists = require("../routes/waitList");
 

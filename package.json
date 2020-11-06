@@ -10,18 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afw821/React-Restaurant-Api.git"
+    "url": "git+https://crystalwatkins.github.io/restaurant-react-app/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/afw821/React-Restaurant-Api/issues"
+    "url": "https://crystalwatkins.github.io/restaurant-react-app/issues"
   },
   "engines": {
     "node": "8.9.2"
   },
-  "homepage": "https://github.com/afw821/React-Restaurant-Api#readme",
+  "homepage": "https://crystalwatkins.github.io/restaurant-react-app/#readme",
   "dependencies": {
     "config": "^3.3.1",
     "cors": "^2.8.5",
